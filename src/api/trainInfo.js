@@ -1,0 +1,11 @@
+import { axios, base } from './../assets/js/axios-re'
+export const TotalData = params => axios.get(`${base}/zt/getWorkCount`, {params: params}).then(res => res.data)
+export const WorkData = params => axios.get(`${base}/zt/getWorkList`, {params: params}).then(res => res.data.attr)
+export const manager = params => axios.put(`${base}/zt/updatemanager`, params)
+export const saveAll = params => axios.post(`${base}/zt/saveall`, params)
+export const finish = params => axios.post(`${base}/manager/newJXKHAll`)
+export const noFinish = params => axios.get(`${base}/zt/getNotFinish`).then(res => res)
+export const Return = params => axios.put(`${base}/zt/return`, params).then(res => res)
+export const returnItBmjl = params => axios.put(`${base}/zt/returnItBmjl`)
+export const returnItBmfjl = params => axios.put(`${base}/zt/returnItBmfjl`)
+export const reset = params => axios.get(`${base}/zt/reset`, {params: params})
